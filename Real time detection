@@ -1,0 +1,15 @@
+from ultralytics import YOLO
+
+# Load the YOLO model with the path to the weights file
+model = YOLO(r'C:\Users\USER\Downloads\best new.pt')
+
+# Perform prediction on the camera feed (source=0)
+results = model.predict(source=0, show=True, conf = 0.75)
+
+# Filter predictions based on confidence score threshold of 90
+# threshold = 90
+# filtered_predictions = [prediction for prediction in results.pred[0] if prediction[4] >= threshold / 100]
+
+# # Display filtered predictions
+# for pred in filtered_predictions:
+#     print(f"Class: {pred[5]}, Confidence: {pred[4]}")
